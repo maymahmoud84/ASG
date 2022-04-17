@@ -1,0 +1,69 @@
+Twitter twitter=new TwitterFactory().getInstance();
+ -Twitter twitter=new TwitterFactory().getInstance();
+, sim: 1.0
+try {
+  User user=twitter.verifyCredentials();
+  List<Status> statuses=twitter.V1_SimpleName();
+  V2_Name.V3_SimpleName("@" + user.getScreenName());
+  for (  Status status : statuses) {
+    V2_Name.V3_SimpleName(V4_StringLiteral + status.getUser().getScreenName() + V5_StringLiteral+ status.getText());
+  }
+}
+ catch (TwitterException te) {
+  te.printStackTrace();
+  System.out.println("Failed to get timeline: " + te.getMessage());
+  System.exit(-1);
+}
+ -try {
+  User user=twitter.verifyCredentials();
+  List<Status> statuses=twitter.getRetweetedByMe();
+  output.print("@" + user.getScreenName());
+  for (  Status status : statuses) {
+    output.print("Retweeted by Me @" + status.getUser().getScreenName() + " - "+ status.getText());
+  }
+}
+ catch (TwitterException te) {
+  te.printStackTrace();
+  System.out.println("Failed to get timeline: " + te.getMessage());
+  System.exit(-1);
+}
+, sim: 0.4914529914529914
+User user=twitter.verifyCredentials();
+ -User user=twitter.verifyCredentials();
+, sim: 1.0
+catch (TwitterException te) {
+  te.printStackTrace();
+  System.out.println("Failed to get timeline: " + te.getMessage());
+  System.exit(-1);
+}
+ -catch (TwitterException te) {
+  te.printStackTrace();
+  System.out.println("Failed to get timeline: " + te.getMessage());
+  System.exit(-1);
+}
+, sim: 1.0
+List<Status> statuses=twitter.V1_SimpleName();
+ -List<Status> statuses=twitter.getRetweetedByMe();
+, sim: 0.9068965517241379
+for (Status status : statuses) {
+  V2_Name.V3_SimpleName(V4_StringLiteral + status.getUser().getScreenName() + V5_StringLiteral+ status.getText());
+}
+ -for (Status status : statuses) {
+  output.print("Retweeted by Me @" + status.getUser().getScreenName() + " - "+ status.getText());
+}
+, sim: 0.8232323232323232
+V2_Name.V3_SimpleName("@" + user.getScreenName());
+ -output.print("@" + user.getScreenName());
+, sim: 0.7901234567901234
+te.printStackTrace();
+ -te.printStackTrace();
+, sim: 1.0
+System.out.println("Failed to get timeline: " + te.getMessage());
+ -System.out.println("Failed to get timeline: " + te.getMessage());
+, sim: 1.0
+System.exit(-1);
+ -System.exit(-1);
+, sim: 1.0
+V2_Name.V3_SimpleName(V4_StringLiteral + status.getUser().getScreenName() + V5_StringLiteral+ status.getText());
+ -output.print("Retweeted by Me @" + status.getUser().getScreenName() + " - "+ status.getText());
+, sim: 0.7407407407407407
