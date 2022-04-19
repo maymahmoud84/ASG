@@ -10,4 +10,11 @@ To run the miner, use the following command
 
 * The templates can be found under OUT_DIR/API_NAME/Template_NUM/output/AUASTS/FinalAUAST.java
 
-
+# Arguments
+There are severals arguments that can be passed to the approach 
+* example_dir: the path to the usage examples folder
+* out_dir: the path to the ouptut directory
+* k: value for the k-means clustering, default set at 15
+* kitr: value for the maximum number of iteration for kmeans, default set at 1000
+* nodes_sim: the thershold value for the similarity measure between two AST nodes to be considered a match
+* ast_sim: the threshold value for the similarity measure between two ASTs to be considered a match
