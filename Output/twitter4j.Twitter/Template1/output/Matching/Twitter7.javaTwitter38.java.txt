@@ -16,10 +16,10 @@ try {
 }
  -try {
   User user=twitter.verifyCredentials();
-  List<Status> statuses=twitter.getMentions();
-  file.write("@" + user.getScreenName());
+  List<Status> statuses=twitter.getRetweetedByMe();
+  output.print("@" + user.getScreenName());
   for (  Status status : statuses) {
-    file.write("Mentioned in user @" + status.getUser().getScreenName() + " 's tweet - "+ status.getText());
+    output.print("Retweeted by Me @" + status.getUser().getScreenName() + " - "+ status.getText());
   }
 }
  catch (TwitterException te) {
@@ -27,7 +27,7 @@ try {
   System.out.println("Failed to get timeline: " + te.getMessage());
   System.exit(-1);
 }
-, sim: 0.48083623693379796
+, sim: 0.5320121951219512
 User user=twitter.verifyCredentials();
  -User user=twitter.verifyCredentials();
 , sim: 1.0
@@ -43,18 +43,18 @@ catch (TwitterException te) {
 }
 , sim: 1.0
 List<Status> statuses=twitter.getRetweetedToMe();
- -List<Status> statuses=twitter.getMentions();
-, sim: 0.9222222222222222
+ -List<Status> statuses=twitter.getRetweetedByMe();
+, sim: 0.975
 for (Status status : statuses) {
   System.out.println("Retweeted to me by @" + status.getUser().getScreenName() + " - "+ status.getText());
 }
  -for (Status status : statuses) {
-  file.write("Mentioned in user @" + status.getUser().getScreenName() + " 's tweet - "+ status.getText());
+  output.print("Retweeted by Me @" + status.getUser().getScreenName() + " - "+ status.getText());
 }
-, sim: 0.7698412698412698
+, sim: 0.842013888888889
 System.out.println("@" + user.getScreenName());
- -file.write("@" + user.getScreenName());
-, sim: 0.6796536796536796
+ -output.print("@" + user.getScreenName());
+, sim: 0.7462121212121212
 te.printStackTrace();
  -te.printStackTrace();
 , sim: 1.0
@@ -65,5 +65,5 @@ System.exit(-1);
  -System.exit(-1);
 , sim: 1.0
 System.out.println("Retweeted to me by @" + status.getUser().getScreenName() + " - "+ status.getText());
- -file.write("Mentioned in user @" + status.getUser().getScreenName() + " 's tweet - "+ status.getText());
-, sim: 0.6750700280112045
+ -output.print("Retweeted by Me @" + status.getUser().getScreenName() + " - "+ status.getText());
+, sim: 0.7769607843137255

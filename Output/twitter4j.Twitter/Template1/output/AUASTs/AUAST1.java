@@ -6,7 +6,7 @@ class GeneralClass {
       List<Status> statuses=twitter.V1_SimpleName();
       V2_Name.V3_SimpleName("@" + user.getScreenName());
       for (      Status status : statuses) {
-        V2_Name.V3_SimpleName(V4_StringLiteral + status.getUser().getScreenName() + V5_StringLiteral+ status.getText());
+        V2_Name.V3_SimpleName(V4_StringLiteral + status.getUser().getScreenName() + " - "+ status.getText());
       }
     }
  catch (    TwitterException te) {
